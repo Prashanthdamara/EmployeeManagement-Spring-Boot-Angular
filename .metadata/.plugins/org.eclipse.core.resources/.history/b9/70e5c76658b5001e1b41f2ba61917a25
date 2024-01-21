@@ -1,0 +1,14 @@
+package com.project.controller;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping(path = "/employee")
+public interface EmployeeController {
+	
+	public ResponseEntity<String> addEmployee(@RequestBody Map<String,String> requestMap);
+
+}

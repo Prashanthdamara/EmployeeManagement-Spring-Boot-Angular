@@ -1,0 +1,34 @@
+package com.project.serviceImpl;
+
+import java.util.Map;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.project.entity.Employee;
+import com.project.repository.EmployeeRepo;
+import com.project.service.EmployeeService;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService{
+	
+	@Autowired
+	private EmployeeRepo employeeRepo;
+
+	@Override
+	public ResponseEntity<String> addEmployee(Employee employee) {
+		try {
+			String empId = UUID.randomUUID().toString();
+			employee.setEmployeeCode(empId);
+			employeeRepo.save(employee);
+			return new ResponseEntity<String>("Employee Added Successfully",HttpStatus.OK);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<String>("Something Went Wrong", HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+}

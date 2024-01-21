@@ -1,0 +1,13 @@
+package com.project.service;
+
+
+
+import org.springframework.http.ResponseEntity;
+
+import com.project.entity.Employee;
+
+public interface EmployeeService {
+	
+	public ResponseEntity<String> addEmployee(Employee employee);
+
+}

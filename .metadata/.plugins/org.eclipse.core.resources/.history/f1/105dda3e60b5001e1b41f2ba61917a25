@@ -1,0 +1,17 @@
+package com.project.controller;
+
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.project.entity.Employee;
+
+@RequestMapping(path = "/employee")
+public interface EmployeeController {
+	
+	@PostMapping("/addemployee")
+	public ResponseEntity<String> addEmployee(@RequestBody Employee employee);
+
+}
