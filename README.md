@@ -28,7 +28,7 @@ This is a web-based Employee Management Application developed using Spring Boot 
    - Open the backend project in your preferred IDE.
    - Configure the database connection in `application.properties` or `application.yml`.
    - Run the Spring Boot application.
-   - 
+     
 3. **Frontend (Angular):**
    - Navigate to the frontend directory:
      ```bash
